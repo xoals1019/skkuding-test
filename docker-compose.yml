@@ -1,18 +1,11 @@
 version: '3'
+
 services:
   nodejs:
+    container_name: nodejs
     build:
       context: .
       dockerfile: Dockerfile
+    # 또는 `image: <owner>/<image>:<tag>`
     ports:
-      - "3000:3000"
-
-  nginx:
-    image: nginx:latest
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./static:/usr/share/nginx/html
-    depends_on:
-      - nodejs
+      - 3000:3000
