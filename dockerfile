@@ -12,4 +12,4 @@ COPY app.js .
 RUN npm install
 
 # 애플리케이션 실행
-CMD ["node", "script.js"]
+CMD ["node", "app.js"]
